@@ -1,3 +1,5 @@
+
+
 export function errorImage(arr, listEl) {
     let errorImage = [];
     arr.forEach(function (el) {
@@ -10,6 +12,7 @@ export function errorImage(arr, listEl) {
         }
     })
     errorImage.forEach(function (item) {
-        item.children[0].src = "./images/no-photo.png";
+        item.children[0].src = '/no-photo.8c94442b.png';
+        console.log(item)
     })
 }
