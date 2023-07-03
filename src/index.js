@@ -94,7 +94,7 @@ function onFilmClick(evt) {
             backdropDescriptionEl.innerHTML = createMarkupDetails(data);
             viewedFilm = data;
             if (!data.poster_path) {
-                backdropDescriptionEl.children[0].src = "/no-photo.6ebb93e4.png";
+                backdropDescriptionEl.children[0].src = "./images/no-photo.png";
             }
             loaderEl.style.display = 'none';
         })

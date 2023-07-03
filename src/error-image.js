@@ -10,6 +10,6 @@ export function errorImage(arr, listEl) {
         }
     })
     errorImage.forEach(function (item) {
-        item.children[0].src = "/no-photo.6ebb93e4.png";
+        item.children[0].src = "./images/no-photo.png";
     })
 }
