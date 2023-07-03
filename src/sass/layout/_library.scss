@@ -21,13 +21,6 @@
   margin-bottom: 60px;
 }
 
-.films__options {
-  display: inline-block;
-  // display: flex;
-  // align-items: center;
-  // flex-wrap: wrap;
-}
-
 .library__buttons {
   display: flex;
   justify-content: center;
@@ -35,7 +28,6 @@
 }
 
 .library__description-vote {
-  display: inline;
   margin-left: 5px;
   font-size: 12;
   line-height: 1.33;

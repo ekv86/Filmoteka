@@ -38,9 +38,8 @@ export function createMarkupForLibrary(arr) {
         `<li class="films__item" data-id="${id}">
         <img class="films__img" src="http://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
         <h3 class="films__description text">${title}</h3>
-        <div class="films__options">
         <span class="filmsGenres"></span>
-        <span class="films__description text films__release"> | ${release_date.split("-")[0]}</span></div>
+        <span class="films__description text films__release"> | ${release_date.split("-")[0]}</span>
         <button class="backdrop__description-vote library__description-vote">${vote_average.toFixed(1)}</button>
         </li>`).join('')
 }
