@@ -13,6 +13,5 @@ export function errorImage(arr, listEl) {
     })
     errorImage.forEach(function (item) {
         item.children[0].src = '/Filmoteka/no-photo.8c94442b.png';
-        console.log(item)
     })
 }
