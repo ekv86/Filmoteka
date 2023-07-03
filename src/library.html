@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./sass/index.css" />
+  </head>
+  <body>
+    <header class="library-header">
+      <div class="container">
+        <nav class="header__nav library__nav">
+           <div class="header__logo">
+            <a href="./index.html" >
+              <svg width="24" height="24" class="header__icon">
+                <use href="./images/svg-sprite.svg#icon-logo"></use></svg></a>
+              <a href="./index.html" class="header__title link">Filmoteka</a>
+          </div>
+          <ul class="list header__list">
+            <li class="header__list-item">
+              <a href="./index.html" class="link header__link text">home</a>
+            </li>
+            <li class="header__list-item">
+              <a href="./library.html" class="link header__link text active-link js-library-link">my library</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="library__buttons">
+            <button type="button" class="main-button js-library-btn-watch text library__btn">
+              watched
+            </button>
+            <button type="button" class="main-button js-library-btn-que text library__btn">
+              queue
+            </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="films">
+        <div class="container">
+          <span class="loader"></span>
+          <h3 class="error js-error">
+            Sorry, we have some technical problems. Try again later.
+          </h3>
+          <ul class="films__list js-film_list"></ul>
+          <div class="pagination" id="pagination">
+            <div
+              class="pagination__arrow pagination__arrow_prev js-pagination__arrow_prev"
+            >
+              <svg width="16" height="16" class="pagination__svg">
+                <use href="./images/svg-sprite.svg#icon-arrow-left"></use>
+              </svg>
+            </div>
+            <ul class="pagination__list js-pagination__list"></ul>
+            <div
+              class="pagination__arrow pagination__arrow_next js-pagination__arrow_next"
+            >
+              <svg width="16" height="16">
+                <use
+                  href="./images/svg-sprite.svg#icon-arrow-right"
+                  class="pagination__svg"
+                ></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-container">
+        <p class="footer__rights">&copy; 2020 | All Rights Reserved |</p>
+        <div class="footer_dev">
+          <span class="footer__rights">Developed with</span>
+          <svg width="14" height="13" class="footer__icon">
+            <use href="./images/svg-sprite.svg#icon-heart"></use>
+          </svg>
+          <span class="footer__rights">by GoIT Students</span>
+        </div>
+      </div>
+    </footer>
+    <div class="backdrop is-hidden js-backdrop">
+      <div class="backdrop__modal js-backdrop-modal">
+        <div class="backdrop__header">
+          <a href="./index.html">
+            <svg width="24" height="24" class="backdrop__icon">
+              <use href="./images/svg-sprite.svg#icon-logo"></use>
+            </svg>
+          </a>
+          <button type="button" class="backdrop__close-btn js-close-btn">
+            <svg width="30" height="30">
+              <use href="./images/svg-sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="backdrop__container">
+          <div class="backdrop__description"></div>
+          <div class="backdrop__buttons">
+            <button type="button" class="main-button js-btn-watch text">
+              add to Watched
+            </button>
+            <button type="button" class="main-button js-btn-que text">
+              add to queue
+            </button>
+          </div>
+        </div>
+        <div class="footer">
+          <p class="footer__rights">&copy; 2020 | All Rights Reserved |</p>
+          <div class="footer_dev">
+            <span class="footer__rights">Developed with</span>
+            <svg width="14" height="13" class="footer__icon">
+              <use href="./images/svg-sprite.svg#icon-heart"></use>
+            </svg>
+            <span class="footer__rights">by GoIT Students</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./library.js" defer></script>
+    <!-- ❗️❗️❗️ Add partials like so for every page -->
+    <!-- <include src="./partials/example.html"></include> -->
+  </body>
+</html>

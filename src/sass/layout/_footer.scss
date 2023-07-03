@@ -1,0 +1,40 @@
+.footer {
+  padding-top: 29px;
+  padding-bottom: 29px;
+  background-color: #f7f7f7;
+}
+
+.footer__rights {
+  color: #545454;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer_dev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.footer__icon {
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer_dev {
+    margin-top: 0;
+    margin-left: 5px;
+  }
+
+  .footer__rights {
+    font-size: 16px;
+  }
+}

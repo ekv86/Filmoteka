@@ -1,0 +1,266 @@
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: 200;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 500ms linear, visibility 500ms linear;
+  background-color: rgba(0, 0, 0, 0.2);
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.backdrop__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  overflow: auto;
+  background-color: var(--primary-color);
+}
+
+.backdrop__header {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url(/src/images/backdrop-320.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 157px;
+  padding-top: 46px;
+  padding-left: 20px;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .backdrop__header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/src/images/backdrop-320@2x.jpg);
+  }
+}
+
+.backdrop__icon {
+  stroke: #818181;
+}
+
+.backdrop__close-btn {
+  position: absolute;
+  top: 36px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  stroke: var(--primary-color);
+  padding: 0;
+  cursor: pointer;
+}
+
+.backdrop__container {
+  padding: 20px 20px 40px;
+}
+
+.backdrop__description {
+  margin-bottom: 40px;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.backdrop__description-img {
+  margin-bottom: 30px;
+}
+
+.backdrop__description-title {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.backdrop__description-block {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -11px;
+}
+
+.backdrop__description-vote {
+  background-color: var(--active-color);
+  color: var(--primary-color);
+  width: 36px;
+  height: 16px;
+  padding: 1px 4px;
+  border-radius: 5px;
+  border: none;
+  & + span {
+    color: #8c8c8c;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+}
+
+.vote_count {
+  background-color: #f7f7f7;
+  color: var(--inscription-color);
+}
+
+.backdrop__description-option {
+  flex-basis: calc((100% - 40px) / 2);
+  color: #8c8c8c;
+  text-transform: none;
+  margin-bottom: 11px;
+}
+
+.backdrop__description-value {
+  flex-basis: calc(100% / 2);
+  margin-bottom: 11px;
+  &:last-child {
+    text-transform: none;
+  }
+}
+
+.backdrop__description-text_title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.backdrop__description-text {
+  line-height: 1.67;
+  text-transform: none;
+}
+
+.backdrop__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-photo{
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .backdrop__modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 707px;
+    height: auto;
+    transition: transform 250ms linear;
+    .footer {
+      display: none;
+    }
+    .main-button {
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  .backdrop__header {
+    background-image: none;
+    padding: 0;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .backdrop__header {
+      background-image: none;
+    }
+  }
+
+  .backdrop__close-btn {
+    top: 8px;
+    right: 8px;
+    stroke: var(--inscription-color);
+  }
+
+  .backdrop__icon {
+    display: none;
+  }
+
+  .backdrop__container {
+    padding: 40px 50px 40px 36px;
+  }
+
+  .backdrop__description {
+    display: flex;
+    margin-bottom: 40px;
+    width: auto;
+  }
+
+  .backdrop__info {
+    margin-left: 68px;
+  }
+
+  .backdrop__description-img {
+    max-width: 264px;
+    height: 373px;
+    margin-bottom: 0;
+  }
+
+  .backdrop__buttons {
+    justify-content: flex-start;
+    margin-left: 317px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .backdrop__modal {
+    width: 830px;
+    .main-button {
+      width: 136px;
+    }
+  }
+
+  .backdrop__container {
+    padding: 40px 25px 40px 12px;
+  }
+
+  .backdrop__description {
+    margin-bottom: 0;
+  }
+
+  .backdrop__description-title {
+    font-size: 30px;
+  }
+
+  .backdrop__description-vote {
+    width: 40px;
+    height: 20px;
+    padding: 1px 4px;
+  }
+
+  .backdrop__info {
+    margin-left: 16px;
+  }
+
+  .backdrop__description-option {
+    flex-basis: 152px;
+  }
+
+  .backdrop__description-img {
+    max-width: 375px;
+    height: 478px;
+  }
+
+  .backdrop__description-text{
+    position: relative;
+  }
+
+  .backdrop__buttons {
+    position: absolute;
+    left: 400px;
+    top: 474px;
+    margin-left: 0;
+  }
+}

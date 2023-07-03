@@ -1,0 +1,97 @@
+.films {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.films__list {
+  width: 280px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.films__item {
+  cursor: pointer;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.films__description {
+  margin-top: 10px;
+}
+
+.films__release {
+  color: #ff6b08;
+}
+
+.filmsGenres {
+  color: #ff6b08;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33;
+}
+
+.films__img {
+  width: 280px;
+  height: 398px;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .films {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .films__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    margin-bottom: 60px;
+    margin-top: -32px;
+    margin-right: -32px;
+  }
+
+  .films__item {
+    width: 336px;
+    margin-top: 32px;
+    margin-right: 32px;
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  .films__img {
+    width: 336px;
+    height: 455px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .films__list {
+    margin-bottom: 60px;
+    margin-top: -32px;
+    margin-right: -16px;
+  }
+
+  .films__item {
+    width: 395px;
+    margin-top: 32px;
+    margin-right: 15px;
+    .text {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+  }
+
+  .films__img {
+    width: 395px;
+    height: 574px;
+  }
+
+  .filmsGenres {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
