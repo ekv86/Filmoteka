@@ -5,9 +5,7 @@ import { getSearchFilms } from './api';
 import { createMarkupDetails } from './markup';
 import { createMarkupFilms } from './markup';
 import { useModal } from './use_modal';
-import { errorImage } from './error-image';
 import { common } from './common';
-
 
 
 const filmListEl = document.querySelector('.js-film_list');
@@ -48,6 +46,7 @@ function searchError() {
 getAllFilms()
     .then((data) => {
         filmListEl.insertAdjacentHTML('beforeend', createMarkupFilms(data.results));
+        console.log(data.results)
         findGenres(data.results);
         pagination();
         loaderEl.style.display = 'none';
@@ -93,9 +92,6 @@ function onFilmClick(evt) {
         .then((data) => {
             backdropDescriptionEl.innerHTML = createMarkupDetails(data);
             viewedFilm = data;
-            if (!data.poster_path) {
-                backdropDescriptionEl.children[0].src = '/Filmoteka/no-photo.8c94442b.png';
-            }
             loaderEl.style.display = 'none';
         })
         .catch(() => {
@@ -136,7 +132,6 @@ function onSubmitForm(evt) {
             console.log(data)
             filmListEl.innerHTML = createMarkupFilms(data.results);
             findGenres(data.results);
-            errorImage(data.results, filmListEl.children);
 
             data.results.forEach(function (el) {
                 if (!el.poster_path) {
@@ -207,7 +202,6 @@ function pagination() {
                     .then((data) => {
                         filmListEl.insertAdjacentHTML('beforeend', createMarkupFilms(data.results));
                         findGenres(data.results);
-                        errorImage(data.results, filmListEl.children);
                         loaderEl.style.display = 'none';
                     })
                     .catch(() => {

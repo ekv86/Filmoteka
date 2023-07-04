@@ -714,10 +714,6 @@ img {
   align-items: center;
 }
 
-.no-photo {
-  display: none;
-}
-
 @media screen and (min-width: 768px) {
   .backdrop__modal {
     top: 50%;

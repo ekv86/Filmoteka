@@ -3,7 +3,6 @@ import { getFilmDetails } from './api';
 import { createMarkupForLibrary } from './markup';
 import { createMarkupDetails } from './markup';
 import { useModal } from './use_modal';
-import { errorImage } from './error-image';
 
 const btnWatchEl = document.querySelector('.js-library-btn-watch');
 const btnQueEl = document.querySelector('.js-library-btn-que');
@@ -103,7 +102,6 @@ function pagination(arr) {
         filmListEl.innerHTML = createMarkupForLibrary(notes);
         findGenres(notes);
         hideOverPages();
-        errorImage(arr, filmListEl.children);
     }
 
     nextPageEl.addEventListener("click", onNextPageClick);
@@ -170,9 +168,6 @@ function onFilmClick(evt) {
     getFilmDetails(filmId)
         .then((data) => {
             backdropDescriptionEl.innerHTML = createMarkupDetails(data);
-            if (!data.poster_path) {
-                backdropDescriptionEl.children[0].src = '/Filmoteka/no-photo.8c94442b.png';
-            }
             loaderEl.style.display = 'none';
         })
         .catch(() => {
